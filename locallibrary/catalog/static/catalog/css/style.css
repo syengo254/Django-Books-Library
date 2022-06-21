@@ -1,0 +1,15 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.errorlist {
+    color: red;
+}
+
+.helptext{
+    font-size: .9rem;
+    font-style: italic;
+    color: rgb(68, 68, 68);
+}

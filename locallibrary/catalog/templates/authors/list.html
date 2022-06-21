@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>Local Library | Authors List</title>
+{% endblock title %}
+
+{% block content %}
+
+<h1>Authors List</h1>
+<ul>
+    {% for author in authors %}
+
+    <li>
+        <a href="{{ author.get_absolute_url }}">{{ author.get_fullname }} </a>
+        ({{author.book_set.count}} book{{author.book_set.count|pluralize}})
+    </li>
+
+    {% empty %}
+    <p>There are no author to display.</p>
+
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated and user.is_staff %}
+<div>
+    <a href="{% url 'author-create' %}" class="btn btn-primary btn-sm">Add Author</a>
+</div>
+{% endif %}
+
+{% endblock content %}

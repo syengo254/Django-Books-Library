@@ -1,0 +1,31 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}
+<title>Local Library | Books List</title>
+{% endblock title %}
+
+{% block content %}
+
+<h1>Book List</h1>
+
+{% if books %}
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+            ({{ book.author }})
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no books in the library.</p>
+    
+{% endif %}
+
+{% if user.is_authenticated and user.is_staff %}
+<div>
+    <a href="{% url 'book-create' %}" class="btn btn-sm btn-primary">Add Book</a>
+</div>
+{% endif%}
+
+{% endblock content %}
