@@ -20,6 +20,8 @@ EXPOSE 8020
 
 RUN python manage.py collectstatic
 
-RUN nginx -g "daemon off;"
+# RUN nginx -g "daemon off;"
 
-CMD [ "gunicorn", "locallibrary.wsgi", "--user www-data", "--bind 0.0.0.0:8000", "--workers 2" ]
+ENTRYPOINT [ "/usr/local/bin/gunicorn" ]
+
+CMD [ "locallibrary.wsgi", "--bind 0.0.0.0:8000" ]
