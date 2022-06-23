@@ -16,7 +16,7 @@ COPY . .
 
 WORKDIR /usr/src/app/locallibrary
 
-EXPOSE 8000
+EXPOSE 8020
 
 RUN python manage.py collectstatic
 
