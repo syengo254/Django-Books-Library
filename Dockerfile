@@ -27,4 +27,4 @@ RUN python manage.py collectstatic
 
 ENTRYPOINT [ "/usr/local/bin/gunicorn" ]
 
-CMD [ "locallibrary.wsgi", "--bind 0.0.0.0:8000" ]
+CMD [ "locallibrary.wsgi", "--bind 127.0.0.1:8000" ]
