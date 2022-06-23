@@ -21,10 +21,14 @@ WORKDIR /usr/src/app/locallibrary
 
 EXPOSE 8020
 
-# RUN python manage.py collectstatic
+STOPSIGNAL SIGTERM
 
-# RUN nginx -g "daemon off;"
+# # RUN python manage.py collectstatic
 
-ENTRYPOINT [ "/usr/local/bin/gunicorn" ]
+# # RUN nginx -g "daemon off;"
 
-CMD [ "locallibrary.wsgi", "--bind 127.0.0.1:8000" ]
+# ENTRYPOINT [ "/usr/local/bin/gunicorn" ]
+
+# CMD [ "locallibrary.wsgi", "--bind 127.0.0.1:8000" ]
+
+CMD ["/usr/src/app/startsvr.sh"]
