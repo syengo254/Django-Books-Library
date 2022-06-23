@@ -21,7 +21,7 @@ WORKDIR /usr/src/app/locallibrary
 
 EXPOSE 8020
 
-RUN python manage.py collectstatic
+# RUN python manage.py collectstatic
 
 # RUN nginx -g "daemon off;"
 
