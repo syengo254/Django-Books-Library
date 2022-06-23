@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.10-buster
 
 # install nginx
 RUN apt-get update && apt-get install nginx vim -y --no-install-recommends
