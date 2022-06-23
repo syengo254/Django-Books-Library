@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'my-key-mymenis_good-lim-^)pje=
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'djangotutmsdn.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.154.130', '*']
 
 
 # Application definition
